@@ -16,6 +16,8 @@ html,body{
 
 /*==========Reusable Components============*/
 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;	
     margin-right: 10%;
     margin-left: 10%;
@@ -51,6 +53,7 @@ section {
 }
 
 .main-nav {
+	-ms-flex-line-pack: center;
 	align-content: center;
 	padding-top: 10px;
 	padding-bottom: 15px;
@@ -182,9 +185,72 @@ h3{
 	padding-top: 60px;
 }
 
+.mailbumItems{	
+	height: 200px;
+	position: relative;
+	line-height: 2;
+}
+
+.footer-mailbumItems{
+	list-style: none;
+	text-align: left;
+	margin-top:100px;
+}
+
+
+.footer-mailbumItems a{
+	color:#6b7484!important;
+}
+
+.usefulLinks{	
+	height: 200px;
+	position: relative;
+	text-align: left;
+	left:150px;
+	line-height: 2;
+}
+
+span{
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.usefulLinksItems{
+	list-style: none;
+	text-align: left;
+	margin-top:50px;
+}
+
+
+.usefulLinksItems a{
+	color:#6b7484!important;
+	text-decoration: none;
+}
+
+.ourpartners{	
+	height: 200px;
+	position: relative;
+	text-align: left;
+	left:150px;
+	line-height: 2;
+}
+
+.ourpartnersItems{
+	list-style: none;
+	text-align: left;
+	margin-top:40px;
+	color:#6b7484!important;
+}
+
+.ourpartnersItems a{	
+	color:#6b7484!important;
+}
+
 .copyright{
 	float: left;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #989898;
 }
+
 
