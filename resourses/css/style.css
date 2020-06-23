@@ -127,13 +127,13 @@ h1,h2{
 }
 
 .collection{	
-	display: -webkit-box;	
-	display: -ms-flexbox;	
-	display: flex;
+	display: block;
+	position: relative;	
+	top: 50px;
 	width: 35%;
 	text-align: center;	
 	padding-left: 20px;
-	margin-bottom:100px;	
+	margin-top:100px;	
 }
 
 .no-message{
@@ -170,13 +170,36 @@ h3{
 }
 
 .card{
-	width: 300px;
-	height: 250px;	
+	width: 340px;
+	height: 300px;	
 	background-color: #fff;
-	margin-top:40px;
+	margin-top:30px;
 	margin-bottom:40px;
 	position: relative;
 	left: 4%;
+}
+
+.card img {
+	width: 300px;
+}
+
+.card a{
+	text-decoration: none;
+	color:#000;
+}
+
+.card span{	
+	font-size:18px;
+}
+.card1,.card2,.card3{		
+	cursor: pointer;
+	
+}
+
+.arrowIcon{
+	position: relative;
+	top:5px;
+	left:30px;
 }
 
 /*================= SECTION Footer=========================*/
