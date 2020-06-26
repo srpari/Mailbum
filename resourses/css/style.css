@@ -400,6 +400,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }/*----------- Social Media Toggle switch ends here------------*/
 
+.socialIconGroup{
+	display: none;
+}
+
 .sliderrange{
 	display: block;
 	width: 100%;
@@ -462,4 +466,22 @@ p {
     -webkit-margin-end: 0px;
     -moz-margin-end: 0px;
     margin-inline-end: 0px;
+}
+
+/*=================== HTML Code Script ==================*/
+
+.code-script{
+	background-color: #fff;
+	width: 100%;
+	position: relative;
+	top:25px;
+	text-align: left;
+	padding: 3rem!important; 
+	display: none;
+}
+
+code {
+    font-size: 87.5%;
+    color: #e83e8c;
+    word-wrap: break-word;
 }

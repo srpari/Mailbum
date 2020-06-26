@@ -1,5 +1,7 @@
 <html>
 	<head>
+		
+<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 				Mailbum - Email Signatures without the Fuss
 		</title>
@@ -7,6 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
 		<link rel="stylesheet" href="/resourses/css/style.css">
+		
+		<script src="resourses/js/script.js"></script>
+		
 	</head>
 	
 	<body>
@@ -35,7 +40,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-					  <h3>Build your Signature (Logo above)</h3>
+					  <h3>Build your Signature</h3>
 					</div>			
 				</div>	
 				<div class="row">
@@ -75,11 +80,11 @@
 					   <div class="form-group">
 							  <label for="logourl" class="">Show social icons</label>
 						      <label class="switch">
-								  <input type="checkbox" checked>
+								  <input type="checkbox" id="socialIcon" onclick="showSocialIcons()">
 								  <span class="slider round"></span>
 							</label>
-
 					   </div>
+			    <div class="socialIconGroup" id="socialIconGroup">
 					   <div class="form-group">
 					   		<label for="iconSize">Social icon size (px)</label>	
 						    <input class="sliderrange" type="range" min="1" max="100" value="50">
@@ -104,11 +109,13 @@
 						   <label for="linkedin">Linkedin</label>
 						   <input type="text" placeholder="Linkedin URL" class="form-control">
 					   </div>
+				</div>
+					   
 					   <hr>
 					   <div class="form-group">
 						   <label><b>Show raw HTML</b></label>
 						    <label class="switch">
-								  <input type="checkbox" checked>
+								  <input type="checkbox" id="showhtml" onclick="showHtmlScript()">
 								  <span class="slider round"></span>
 							</label>
 					   </div>
@@ -129,7 +136,7 @@
 						  </table>
 						  <p>We’ve set up an example email so you can quickly see what your email footer will look like. When you’re happy, simply click ‘copy email signature’ and we’ll show you how to embed it into your email client. </p>
 						  <p>If you have any questions, you can contact us here.</p>
-						  <p class="mb-5">Good luck!</p>
+						  <p>Good luck!</p>
 						  <table>
 							  <tbody>
 								  <tr><td style="font-size:14px;font-family:-apple-system, Arial, sans-serif">
@@ -139,15 +146,18 @@
 						  </table>
 					   </div>
 				   </div>
+					
+					
+				  <div class="code-script" id="htmlscript">
+					  <code>
+					   HTML SCRIPT HERE
+					  </code>
+				  </div>
+					
 				</div>			
 			</div>
 		  </div>
 		
-		  <div class="code-script">
-			 <code>
-			  	
-			 </code>
-		  </div>
 		</section>
 		
 		<section class="section-footer">
