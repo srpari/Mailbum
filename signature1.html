@@ -12,6 +12,11 @@
 		
 		<script src="resourses/js/script.js"></script>
 		
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		
+<!--<script src="resourses/js/jquerysign.js"></script> -->
+		
+	
 	</head>
 	
 	<body>
@@ -58,27 +63,27 @@
 				   <div class="form-groupItems">
 					   <div class="form-group">
 						   <label for="fullName" class="">Full name</label>
-						   <input type="text" placeholder="Joe Bloggs" class="form-control">
+						   <input type="text" placeholder="Joe Bloggs" class="form-control" id="fullname" oninput="printFullname()">
 					   </div>
 					   <div class="form-group">
 						   <label for="job" class="">Job Title</label>
-						   <input type="text" placeholder="Magician" class="form-control">
+						   <input type="text" placeholder="Magician" class="form-control" id="jobtitle" oninput="printJobtitle()">
 					   </div>
 					   <div class="form-group">
 						   <label for="phone" class="">Phone number</label>
-						   <input type="text" placeholder="(+44) 1234 567" class="form-control">
+						   <input type="text" placeholder="(+44) 1234 567" class="form-control" id="phone" oninput="printPhonenumber()">
 					   </div>
 					   <div class="form-group">
 						   <label for="website" class="">Website</label>
-						   <input type="text" placeholder="www.website.com" class="form-control">
+						   <input type="text" placeholder="www.website.com" class="form-control" id="website" oninput="printWebsite()">
 					   </div>
 					   <div class="form-group">
 						   <label for="logourl" class="">Logo URL</label>
-						   <input type="text" placeholder="http://website.com/img/logo.png" class="form-control">
+						   <input type="text" placeholder="http://website.com/img/logo.png" class="form-control" id="logourl" oninput="printLogourl()">
 						   <small><a class="logourllink" href="#" target="_BLANK" title="Upload your logo"><u>Need to upload your logo?</u></a></small>
 					   </div>
 					   <div class="form-group">
-							  <label for="logourl" class="">Show social icons</label>
+							  <label for="showsocialicons" class="">Show social icons</label>
 						      <label class="switch">
 								  <input type="checkbox" id="socialIcon" onclick="showSocialIcons()">
 								  <span class="slider round"></span>
@@ -87,27 +92,29 @@
 			    <div class="socialIconGroup" id="socialIconGroup">
 					   <div class="form-group">
 					   		<label for="iconSize">Social icon size (px)</label>	
-						    <input class="sliderrange" type="range" min="1" max="100" value="50">
+						    <input id="sliderrange" class="sliderrange" type="range" min="1" max="100" value="50" oninput="slideFunction(this.value)">
+						    <div id="demo"></div>
+						   
 					   </div>	
 					    <div class="form-group">
 						   <label for="facebook">Facebook</label>
-						   <input type="text" placeholder="Facebook URL" class="form-control">
+						   <input type="text" placeholder="Facebook URL" class="form-control" id="facebook" oninput="printFacebook()">
 					   </div>
 					   <div class="form-group">
 						   <label for="twitter">Twitter</label>
-						   <input type="text" placeholder="Twitter URL" class="form-control">
+						   <input type="text" placeholder="Twitter URL" class="form-control" id="twitter" oninput="printTwitter()">
 					   </div>
 					   <div class="form-group">
 						   <label for="instagram">Instagram</label>
-						   <input type="text" placeholder="Instagram URL" class="form-control">
+						   <input type="text" placeholder="Instagram URL" class="form-control" id="instagram" oninput="printInstagram()">
 					   </div>
 					   <div class="form-group">
 						   <label for="youtube">Youtube</label>
-						   <input type="text" placeholder="Youtube URL" class="form-control">
+						   <input type="text" placeholder="Youtube URL" class="form-control" id="youtube" oninput="printYoutube()">
 					   </div>
 					   <div class="form-group">
 						   <label for="linkedin">Linkedin</label>
-						   <input type="text" placeholder="Linkedin URL" class="form-control">
+						   <input type="text" placeholder="Linkedin URL" class="form-control" id="linkedin" oninput="printLinkedin()">
 					   </div>
 				</div>
 					   
@@ -137,21 +144,56 @@
 						  <p>We’ve set up an example email so you can quickly see what your email footer will look like. When you’re happy, simply click ‘copy email signature’ and we’ll show you how to embed it into your email client. </p>
 						  <p>If you have any questions, you can contact us here.</p>
 						  <p>Good luck!</p>
-						  <table>
+						  
+						  <div id="preview-output">
+							<table>
 							  <tbody>
-								  <tr><td style="font-size:14px;font-family:-apple-system, Arial, sans-serif">
-									  <p class="hint">Hint: start by entering your name!</p></td>
-								  </tr>
+								  <tr class="sign-preview" id="sign-preview">
+									   <p id="hint">Hint: start by entering your name!</p>	
+									<td id="printlogo" style="padding-right: 30px;">
+									 <img id="logoimg" src="#" height="50" alt="Logo"/>	
+									</td>
+									 <td style="font-size:14px;font-family:-apple-system, Arial, sans-serif" id="hintResult">		
+										 <span id="printfullname" style="font-size: 16px; margin-top: 0px; margin-bottom: 0px;"></span>
+										 
+										 <span id="printjobtitle" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></span> 
+										 
+										 <a id="printphonenumber" href="#" target="_BLANK" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></a>
+										 										 
+										 <a id="printwebsite" href="#" target="_BLANK" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></a>	
+										 
+										 <span style="line-height: 1; margin: 0px; padding: 0px;">&nbsp;</span>
+										 <br>
+										 
+										 <a id="printfacebook" href="#" target="_BLANK"><img id="fbimg" src="resourses/img/facebook.png" /></a> 									 
+										 
+										 <a id="printtwitter" href="#" target="_BLANK"><img id="twimg" src="resourses/img/twitter.png" /></a> 
+										 										 
+										 <a id="printinstagram" href="#" target="_BLANK"><img id="instaimg" src="resourses/img/instagram.png"/></a> 							 							 
+										 <a id="printyoutube" href="#" target="_BLANK"><img id="youtubeimg" src="resourses/img/youtube.png"/></a> 	
+										 
+										 <a id="printlinkedin" href="#" target="_BLANK"><img id="linkedinimg" src="resourses/img/linkedin.png"/></a> 
+									 
+									  </td>
+									  
+								  </tr>								    
 							  </tbody>
 						  </table>
+						 </div>
+						<!-- <table>
+							  <tbody>
+								  <tr><td style="font-size:14px;font-family:-apple-system, Arial, sans-serif">
+									  <p class="hint" id="hintResult">Hint: start by entering your name!</p></td>
+								  </tr>
+							  </tbody>
+						  </table> -->
+						  
 					   </div>
 				   </div>
 					
 					
-				  <div class="code-script" id="htmlscript">
-					  <code>
-					   HTML SCRIPT HERE
-					  </code>
+				  <div class="code-htmlscript" id="code-htmlscript">
+					   
 				  </div>
 					
 				</div>			
@@ -196,6 +238,7 @@
 			</div>
 		</div>
 	</section>
+		
 		
 	</body>
 

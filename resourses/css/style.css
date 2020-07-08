@@ -234,7 +234,7 @@ h3{
 	line-height: 2;
 }
 
-span{
+.usefulLinks span{
 	font-weight: 600;
 	font-size: 18px;
 }
@@ -258,6 +258,13 @@ span{
 	left:150px;
 	line-height: 2;
 }
+
+
+.ourpartners span{
+	font-weight: 600;
+	font-size: 18px;
+}
+
 
 .ourpartnersItems{
 	list-style: none;
@@ -300,7 +307,7 @@ span{
 label {
     display: inline-block;
     margin-bottom: .5rem;
-	cursor: default;
+	/* cursor: default; */
 }
 
 .form-control{
@@ -316,10 +323,6 @@ label {
     background-clip: padding-box;	
     border: 1px solid #ced4da;
 	border-radius: .25rem;
-    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
 .form-group{
@@ -382,12 +385,12 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2ddd1e;
   box-shadow: 0 0 1px #2ddd1e;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
@@ -470,7 +473,7 @@ p {
 
 /*=================== HTML Code Script ==================*/
 
-.code-script{
+.code-htmlscript{
 	background-color: #fff;
 	width: 100%;
 	position: relative;
@@ -480,8 +483,24 @@ p {
 	display: none;
 }
 
-code {
+#preview-output{
+	margin-top: 40px;
+}
+
+#printfullname,#printjobtitle,
+#logoimg{
+	display: none;
+}
+
+#fbimg,#twimg,#instaimg,#youtubeimg,#linkedinimg{
+	display: none;
+}
+
+/* code {
     font-size: 87.5%;
     color: #e83e8c;
     word-wrap: break-word;
-}
+} */
+
+/*====================Dynamic Values (Hint Result)====================*/
+
