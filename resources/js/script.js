@@ -85,7 +85,8 @@ function printFacebook() {
 }
 
 function printTwitter() {
-	var x=document.getElementById("twitter").value;	var len=document.getElementById("twitter").value.length;
+	var x=document.getElementById("twitter").value;	
+	var len=document.getElementById("twitter").value.length;
 	if (len==0){
     	document.getElementById("twimg").style.display="none";
 	} else {		
@@ -136,5 +137,11 @@ function printLinkedin() {
 }
 
 
- 
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
  
