@@ -326,6 +326,13 @@ label {
 	border-radius: .25rem;
 }
 
+#logourl {
+	display:block;
+    padding:1px;
+	width: 100%;
+	border-radius: .25rem;
+}
+
 .form-group{
 	margin-bottom: 1rem;
 }
@@ -488,9 +495,13 @@ p {
 	margin-top: 40px;
 }
 
-#printfullname,#printjobtitle,
-#logoimg{
+#printfullname,#printjobtitle{
 	display: none;
+}
+
+#logourl {
+	display: none;
+	align-items: center;
 }
 
 #fbimg,#twimg,#instaimg,#youtubeimg,#linkedinimg{
