@@ -15,10 +15,11 @@
 		
 		<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 		
-<script src="resources/js/jquerysign.js"></script> -->
-		
-	
-	</head>
+ <script src="resources/js/jquerysign.js"></script> -->
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+  
+</head>
 	
 	<body>
       <header class="border-bottom">
@@ -80,8 +81,8 @@
 					   </div>
 					   <div class="form-group">
 						   <label for="logourl" class="">Logo URL</label>
-						   <input type="text" placeholder="http://website.com/img/logo.png" class="form-control" id="logourl" oninput="printLogourl()">
-						   <small><a class="logourllink" href="#" target="_BLANK" title="Upload your logo"><u>Need to upload your logo?</u></a></small>
+						   <input type="file" id="logo" onchange="previewLogo(this);">
+						   <!-- <small><a class="logourllink" href="https://imgur.com/" target="_BLANK" title="Upload your logo"><u>Need to upload your logo?</u></a></small> -->
 					   </div>
 					   <div class="form-group">
 							  <label for="showsocialicons" class="">Show social icons</label>
@@ -117,19 +118,19 @@
 						   <label for="linkedin">Linkedin</label>
 						   <input type="text" placeholder="Linkedin URL" class="form-control" id="linkedin" oninput="printLinkedin()">
 					   </div>
-				</div>
-					   
+				</div>					   
 					   <hr>
-					   <div class="form-group">
+					   <!-- <div class="form-group">
 						   <label><b>Show raw HTML</b></label>
 						    <label class="switch">
 								  <input type="checkbox" id="showhtml" onclick="showHtmlScript()">
 								  <span class="slider round"></span>
 							</label>
-					   </div>
-					   <div>
-					   	  <button type="button" class="btn copybtn">					
-					   	 <!-- <button type="button" class="btn copybtn" onclick="copyToClipboard('#preview-output')"> -->
+					   </div> -->
+					   <div>						   
+					   <div id="copied" style="text-align: center;"></div>
+					   	  <!-- <button type="button" class="btn copybtn">					 -->
+					   	 <button type="button" class="btn copybtn" onclick="copyToClipboard()">
 						  Copy email signature</button>
 						   <a href="#" target="_BLANK" class="buycoffee" title="Buy me a coffee"><u>Buy me a coffee</u>
 						   </a>
@@ -152,12 +153,11 @@
 							  <tbody>
 								  <tr class="sign-preview" id="sign-preview">
 									   <p id="hint">Hint: start by entering your name!</p>	
-									<td id="printlogo" style="padding-right: 30px;">
-									 <img id="logoimg" src="#" height="50" alt="Logo"/>	
+									<td class="logourl" id="logourl" style="padding-right: 30px;">
+									 	<img id="logopreview" height="80" width="80" alt="Logo"/>	
 									</td>
 									 <td style="font-size:14px;font-family:-apple-system, Arial, sans-serif" id="hintResult">		
 										 <span id="printfullname" style="font-size: 16px; margin-top: 0px; margin-bottom: 0px;"></span>
-										 
 										 <span id="printjobtitle" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></span> 
 										 
 										 <a id="printphonenumber" href="#" target="_BLANK" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></a>
@@ -182,21 +182,13 @@
 							  </tbody>
 						  </table>
 						 </div>
-						<!-- <table>
-							  <tbody>
-								  <tr><td style="font-size:14px;font-family:-apple-system, Arial, sans-serif">
-									  <p class="hint" id="hintResult">Hint: start by entering your name!</p></td>
-								  </tr>
-							  </tbody>
-						  </table> -->
-						  
 					   </div>
 				   </div>
-					
+<!-- 					
 					
 				  <div class="code-htmlscript" id="code-htmlscript">
 					   
-				  </div>
+				  </div> -->
 					
 				</div>			
 			</div>

@@ -35,113 +35,131 @@ function slideFunction(val) {
 function printFullname(){
 	document.getElementById("printfullname").style.display="block";
 	document.getElementById("hint").style.display="none";
-	var x=document.getElementById("fullname").value;
-	document.getElementById("printfullname").innerHTML="<strong>"+x+"</strong><br>";
+	var fname=document.getElementById("fullname").value;
+	document.getElementById("printfullname").innerHTML="<strong>"+fname+"</strong><br>";
 }
 
 
 function printJobtitle(){		
 	document.getElementById("printjobtitle").style.display="block";
-	var x=document.getElementById("jobtitle").value;	
-	document.getElementById("printjobtitle").innerHTML=x+"</span><br><br>"; 
+	var job=document.getElementById("jobtitle").value;	
+	document.getElementById("printjobtitle").innerHTML=job+"</span><br><br>"; 
 }
 
 function printPhonenumber(){		
 	document.getElementById("printphonenumber").style.display="block";
-	var x=document.getElementById("phone").value;	
-	document.getElementById("printphonenumber").href=x; 	
-	document.getElementById("printphonenumber").innerHTML=x; 	
+	var phone=document.getElementById("phone").value;	
+	document.getElementById("printphonenumber").href=phone; 	
+	document.getElementById("printphonenumber").innerHTML=phone; 	
 }
 
 function printWebsite(){			
 	document.getElementById("printwebsite").style.display="block";
-	var x=document.getElementById("website").value;	
-	document.getElementById("printwebsite").href=x;	
-	document.getElementById("printwebsite").innerHTML=x;	
+	var website=document.getElementById("website").value;	
+	document.getElementById("printwebsite").href=website;	
+	document.getElementById("printwebsite").innerHTML=website;	
 }
 
-function printLogourl(){
-	var len=document.getElementById("logourl").value.length;
-	if (len==0){
-    	document.getElementById("logoimg").style.display="none";
-	}else {
-		document.getElementById("logoimg").style.display="block";
-		document.getElementById('logoimg').src =document.getElementById("logourl").value;
-	}	
+function previewLogo(obj)
+	{		
+		if (FileReader)
+		{
+			var reader = new FileReader();
+			reader.readAsDataURL(obj.files[0]);
+			reader.onload = function (e) {
+			var image=new Image();
+			image.src=e.target.result;
+			image.onload = function () {
+				document.getElementById("logourl").style.display="block";
+				document.getElementById("logopreview").src=image.src;
+			};
+		  }
+		}
+		else
+		{			
+			document.getElementById("logopreview").src="Logo"
+		}
 }
-
 
 function printFacebook() {
-	var x=document.getElementById("facebook").value;
+	var fb=document.getElementById("facebook").value;
 	var len=document.getElementById("facebook").value.length;
 	if (len==0){
     	document.getElementById("fbimg").style.display="none";
 	} else {			
 		document.getElementById("fbimg").style.display="inline-block";
-		document.getElementById("printfacebook").href=x; 	
+		document.getElementById("printfacebook").href=fb; 	
 		var slidervalue=document.getElementById("sliderrange").value;	
 		document.getElementById("fbimg").width=slidervalue;
 	}
 }
 
 function printTwitter() {
-	var x=document.getElementById("twitter").value;	
+	var twitter=document.getElementById("twitter").value;	
 	var len=document.getElementById("twitter").value.length;
 	if (len==0){
     	document.getElementById("twimg").style.display="none";
 	} else {		
 		document.getElementById("twimg").style.display="inline-block";
-		document.getElementById("printtwitter").href=x; 	
+		document.getElementById("printtwitter").href=twitter; 	
 		var slidervalue=document.getElementById("sliderrange").value;	
 		document.getElementById("twimg").width=slidervalue;
 	}
 }
 
 function printInstagram() {
-	var x=document.getElementById("instagram").value;
+	var insta=document.getElementById("instagram").value;
 	var len=document.getElementById("instagram").value.length;
 	if (len==0){
     	document.getElementById("instaimg").style.display="none";
 	} else {	
 	document.getElementById("instaimg").style.display="inline-block";
-	document.getElementById("printinstagram").href=x; 	
+	document.getElementById("printinstagram").href=insta; 	
 	var slidervalue=document.getElementById("sliderrange").value;	
 	document.getElementById("instaimg").width=slidervalue;
 	}
 }
 
 function printYoutube() {
-	var x=document.getElementById("youtube").value;	
+	var ytube=document.getElementById("youtube").value;	
 	var len=document.getElementById("youtube").value.length;
 	if (len==0){
     	document.getElementById("youtubeimg").style.display="none";
 	} else {
 		document.getElementById("youtubeimg").style.display="inline-block";
-		document.getElementById("printyoutube").href=x; 	
+		document.getElementById("printyoutube").href=ytube; 	
 		var slidervalue=document.getElementById("sliderrange").value;	
 		document.getElementById("youtubeimg").width=slidervalue;
 	}
 }
 
 function printLinkedin() {
-	var x=document.getElementById("linkedin").value;	
+	var linkedin=document.getElementById("linkedin").value;	
 	var len=document.getElementById("linkedin").value.length;
 	if (len==0){
     	document.getElementById("linkedinimg").style.display="none";
 	} else {
 		document.getElementById("linkedinimg").style.display="inline-block";
-		document.getElementById("printlinkedin").href=x; 	
+		document.getElementById("printlinkedin").href=linkedin; 	
 		var slidervalue=document.getElementById("sliderrange").value;	
 		document.getElementById("linkedinimg").width=slidervalue;
 	}
 }
 
+// function copyToClipboard(){ 
+// 	html2canvas(document.querySelector('.logourl'), {
+// 		onrendered: function(canvas) {
+// 			document.body.appendChild(canvas);
+// 		}
+// 	});
+// }
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
+function copyToClipboard() {
+	var range = document.createRange();
+	range.selectNode(document.getElementById("preview-output"));
+	window.getSelection().removeAllRanges(); // clear current selection
+	window.getSelection().addRange(range); // to select text
+	document.execCommand("copy"); 
+	window.getSelection().removeAllRanges();// to deselect
+	document.getElementById("copied").innerHTML="Copied to Clipboard";
 }
- 
