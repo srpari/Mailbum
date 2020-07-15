@@ -8,16 +8,12 @@ function showSocialIcons() {
 	}
 
 
-function showHtmlScript() {
-		
+function showHtmlScript() {		
 		if(document.getElementById("showhtml").checked)
-		{			
-			
+		{						
 		   document.getElementById("code-htmlscript").style.display="block";	
-			
-		document.getElementById('code-htmlscript').innerHTML=document.getElementById('preview-output').innerHTML
-					
-		}
+	       document.getElementById('code-htmlscript').innerHTML=document.getElementById('preview-output').innerHTML
+     	}
 		else {		
 		  document.getElementById("code-htmlscript").style.display="none";
 		}	
