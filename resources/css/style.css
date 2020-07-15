@@ -479,6 +479,10 @@ p {
     margin-inline-end: 0px;
 }
 
+#phlable,#weblable,#sociallable{
+	display: none;
+}
+
 /*=================== HTML Code Script ==================*/
 
 .code-htmlscript{

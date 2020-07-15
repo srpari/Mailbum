@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
         <link rel="stylesheet" href="/resources/css/style.css">
         
-		<script src="/resources/js/script.js"></script>
+		<script src="/resources/js/script3.js"></script>
 		
 </head>
 <body>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                  <h3>Build your Signature (Logo above) </h3>
+                  <h3>Build your Signature (Lanscape) </h3>
                 </div>			
             </div>	
             <div class="row">
@@ -56,19 +56,19 @@
                <div class="form-groupItems">
                    <div class="form-group">
                        <label for="fullName" class="">Full name</label>
-                       <input type="text" placeholder="Joe Bloggs" class="form-control" id="fullname" oninput="printFullname()">
+                       <input type="text" placeholder="Joe Bloggs" class="form-control" id="fullname" onchange="printFullname()">
                    </div>
                    <div class="form-group">
                        <label for="job" class="">Job Title</label>
-                       <input type="text" placeholder="Magician" class="form-control" id="jobtitle" oninput="printJobtitle()">
+                       <input type="text" placeholder="Magician" class="form-control" id="jobtitle" onchange="printJobtitle()">
                    </div>
                    <div class="form-group">
                        <label for="phone" class="">Phone number</label>
-                       <input type="text" placeholder="(+44) 1234 567" class="form-control" id="phone" oninput="printPhonenumber()">
+                       <input type="text" placeholder="(+44) 1234 567" class="form-control" id="phone" onchange="printPhone()">
                    </div>
                    <div class="form-group">
                        <label for="website" class="">Website</label>
-                       <input type="text" placeholder="www.website.com" class="form-control" id="website" oninput="printWebsite()">
+                       <input type="text" placeholder="www.website.com" class="form-control" id="website" onchange="printWebsite()">
                    </div>
                    <div class="form-group">
                        <label for="logourl" class="">Logo URL</label>
@@ -85,9 +85,8 @@
             <div class="socialIconGroup" id="socialIconGroup">
                    <div class="form-group">
                            <label for="iconSize">Social icon size (px)</label>	
-                        <input id="sliderrange" class="sliderrange" type="range" min="1" max="100" value="50" oninput="slideFunction(this.value)">
-                        <div id="demo"></div>
-                       
+                        <input id="sliderrange" class="sliderrange" type="range" min="1" max="25" value="50" oninput="slideFunction(this.value)">
+                        <div id="demo"></div>                       
                    </div>	
                     <div class="form-group">
                        <label for="facebook">Facebook</label>
@@ -140,25 +139,25 @@
                       <p>Good luck!</p>
                       
                       <div id="preview-output">
-                        <table>
-                          <tbody>
-                              <tr class="sign-preview" id="sign-preview">
-                                   <p id="hint">Hint: start by entering your name!</p>	
-                                <tr class="logourl" id="logourl" style="padding-right: 30px;">
-                                     <img id="logopreview" height="80" width="80" alt="Logo"/>	
-                                </tr>
-                                 <td style="font-size:14px;font-family:-apple-system, Arial, sans-serif" id="hintResult">		
-                                     <span id="printfullname" style="font-size: 16px; margin-top: 0px; margin-bottom: 0px;"></span>
-                                     <span id="printjobtitle" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></span> 
-                                     
-                                     <a id="printphonenumber" href="#" target="_BLANK" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></a>
-                                                                              
-                                     <a id="printwebsite" href="#" target="_BLANK" style="color: rgb(153, 153, 153); margin-top: 0px; margin-bottom: 0px; text-decoration: none;"></a>	
-                                     
-                                     <span style="line-height: 1; margin: 0px; padding: 0px;">&nbsp;</span>
-                                     <br>
-                                     
-                                     <a id="printfacebook" href="#" target="_BLANK"><img id="fbimg" src="/resources/img/facebook.png"/></a> 									 
+                         <table>
+                           <tr style="font-size:14px;line-height:1.5;font-family:-apple-system, Arial, sans-serif">
+                            <td> <span class="logourl" id="logourl" style="padding-right: 30px;"> 
+                                <img id="logopreview" height="80" width="80" alt="Logo"/>	
+                              </span>
+                             </td>
+                             <td> <p><span id="namefld"></span><br>
+                                <span id="jobfld"></span></p> </td>
+                           </tr>
+                           <tr style="font-size:14px;line-height:1.5;font-family:-apple-system, Arial, sans-serif">
+                                <td style="padding-right: 40px;"> 
+                                        <span id="phlable"><strong>Phone</strong></span> 
+                                        <span id="phonenumber"></span></td>
+                                        <td  style="padding-right: 40px;" ><span id="weblable"><strong>Website</strong></span>  
+                                        <span id="websiteadd"></span> </td>
+                                    <td>
+                                        <span id="sociallable"><strong>Social</strong></span>                                      
+                                    
+                                    <a id="printfacebook" href="#" target="_BLANK"><img id="fbimg" src="/resources/img/facebook.png"/></a> 									 
                                      
                                      <a id="printtwitter" href="#" target="_BLANK"><img id="twimg" src="/resources/img/twitter.png" /></a> 
                                                                               
@@ -166,13 +165,11 @@
                                      <a id="printyoutube" href="#" target="_BLANK"><img id="youtubeimg" src="/resources/img/youtube.png"/></a> 	
                                      
                                      <a id="printlinkedin" href="#" target="_BLANK"><img id="linkedinimg" src="/resources/img/linkedin.png"/></a> 
-                                 
-                                  </td>
-                                  
-                              </tr>								    
-                          </tbody>
-                      </table>
-                     </div>
+                                     </td>
+                           </tr>
+                        </table>
+                      </div>
+
                    </div>
                </div>
 <!-- 					
@@ -227,3 +224,35 @@
     
 </body>
 </html>
+
+
+<!--
+
+<div id="preview-output">
+                          <table>
+                           <tr style="font-size:14px;line-height:1.5;font-family:-apple-system, Arial, sans-serif">
+                            <td>
+                                <span class="logourl" id="logourl" style="padding-right: 30px;"> 
+                                  <img id="logopreview" height="80" width="80" alt="Logo"/>	
+                                </span>  
+                            </td>                        
+                                <td><p><span id="namefld"></span>
+                                    <span id="jobfld"></span></p> 
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;line-height:1.5;font-family:-apple-system, Arial, sans-serif">
+                                <td style="padding-right: 40px;"> </td>
+                                <td style="padding-right: 40px;"> 
+                                    <span id="phlable"><strong>Phone</strong></span> 
+                                    <span id="phonenumber"></span></td>
+                                    <td><span id="weblable"><strong>Website</strong></span>  
+                                    <span id="websiteadd"></span> </td>
+                                <td>
+                                    <span id="sociallable"><strong>Social</strong></span>
+                                    <span id="socialIcons"></span> </td>
+                                </tr>
+                           </table>
+                      </div>
+
+
+-->
